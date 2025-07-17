@@ -62,7 +62,7 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
             files={"image_file": img},
             data={
                 "size": "auto",
-                "format": "png"  # Ensures transparency
+                "format": "png"
             },
             headers={"X-Api-Key": REMOVE_BG_API_KEY}
         )
