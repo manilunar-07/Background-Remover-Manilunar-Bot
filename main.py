@@ -60,7 +60,10 @@ async def handle_photo(update: Update, context: ContextTypes.DEFAULT_TYPE):
         response = requests.post(
             "https://api.remove.bg/v1.0/removebg",
             files={"image_file": img},
-            data={"size": "auto"},
+            data={
+                "size": "auto",
+                "format": "png"  # Ensures transparency
+            },
             headers={"X-Api-Key": REMOVE_BG_API_KEY}
         )
 
